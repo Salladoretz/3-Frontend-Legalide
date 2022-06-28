@@ -352,6 +352,192 @@ body {
             }
         }
     }
+
+    .contacts {
+        display: flex;
+        flex-direction: column;
+        background: #f3f3f3;
+        align-items: center;
+
+        .title {
+            margin-top: 80px;
+        }
+
+        .contacts__container {
+            display: flex;
+            height: 393px;
+            margin: 80px 0px 155px 0px;
+            align-items: center;
+
+            .contacts__card {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 328px;
+                height: 333px;
+                background: white;
+                padding-top: 50px;
+
+                img {
+                    margin-bottom: 15px;
+                }
+
+                h6 {
+                    color: $fontColor1;
+                    font-size: 14px;
+                    line-height: 24px;
+                    letter-spacing: 0.2px;
+                }
+
+                h5 {
+                    font-family: $Martel;
+                    font-weight: 700;
+                    font-size: 16px;
+                    line-height: 24px;
+                    letter-spacing: 0.1px;
+                    color: $fontColor1;
+                    margin-top: 15px;
+                }
+
+                button {
+                    width: 144px;
+                    height: 44px;
+                    background: transparent;
+                    color: #D0A144;
+                    border-radius: 5px;
+                    border: 1px solid #D0A144;
+                    margin-top: 15px;
+                    font-size: 14px;
+                    line-height: 24px;
+                    letter-spacing: 0.2px;
+                }
+            }
+
+            .contacts__card:hover {
+                height: 393px;
+                background: $fontColor1;
+
+                h6,
+                h5 {
+                    color: white;
+                }
+            }
+        }
+    }
+
+    .footer {
+        .footer__top {
+            height: 142px;
+            display: flex;
+            padding-left: 195px;
+
+            .footer__topContainer {
+                display: flex;
+                width: 100%;
+                align-items: center;
+                justify-content: space-between;
+                padding-right: 341px;
+
+                .footer__topText {
+
+                    h3 {
+                        font-family: $Martel;
+                        color: $fontColor1;
+                        font-size: 24px;
+                        line-height: 32px;
+                        letter-spacing: 0.1px;
+                    }
+                }
+
+                button {
+                    height: 58px;
+                    width: 158px;
+                    background: #784F33;
+                    color: white;
+                    border-radius: 5px;
+                }
+            }
+        }
+
+        .footer__middle {
+            display: flex;
+            height: 242px;
+            background: linear-gradient(270deg, #295C7A -1.04%, #0072B5 100%);
+            color: white;
+            padding: 50px 0px 0px 195px;
+
+            .footer__middleCol {
+                display: flex;
+                flex-direction: column;
+                margin-right: 42px;
+                width: 148px;
+
+                h5 {
+                    font-family: $Martel;
+                    font-size: 16px;
+                    line-height: 24px;
+                    letter-spacing: 0.1px;
+                    margin-bottom: 20px;
+                }
+
+                a {
+                    color: white;
+                    font-weight: 600;
+                    font-size: 14px;
+                    line-height: 24px;
+                    letter-spacing: 0.2px;
+
+                }
+            }
+
+            .footer__middleLastCol {
+                margin-left: 42px;
+
+                h5 {
+                    font-family: $Martel;
+                    font-size: 16px;
+                    line-height: 24px;
+                    letter-spacing: 0.1px;
+                    margin-bottom: 20px;
+                }
+
+                .footer__middleContact {
+                    display: flex;
+
+                    img {
+                        margin: 0px 10px 20px 0px;
+                    }
+
+                    h6 {
+                        font-size: 14px;
+                        line-height: 24px;
+                        letter-spacing: 0.2px;
+                    }
+                }
+            }
+        }
+
+        .footer__bottom {
+            display: flex;
+            align-items: center;
+            height: 74px;
+            padding: 0px 224px 0px 195px;
+            justify-content: space-between;
+
+            h6 {
+                color: $fontColor2;
+                font-size: 14px;
+                line-height: 24px;
+                letter-spacing: 0.2px;
+            }
+
+            .footer__bottomSMM {
+                a {
+                    margin-left: 20px;
+                }
+            }
+        }
+    }
 }
 
 .title {

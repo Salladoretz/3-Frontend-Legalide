@@ -6,23 +6,40 @@ $fontColor1: #252B42;
 $fontColor2: #737373;
 $Martel: 'Martel', serif;
 
+$w: 768px;
+
 body {
     font-family: 'Open Sans', sans-serif;
+    width: 100%;
 
     .header {
-        height: 100%;
         background-image: url('/img/Cover.png');
         background-size: cover;
         display: flex;
         flex-direction: column;
         align-items: center;
 
+
+        @media screen and (max-width: $w) {
+            background-image: url('/img/Cover_mobile.png');
+        }
+
         .header__navbar {
             display: grid;
             grid-template-columns: 6fr 3fr auto;
             align-items: center;
-            height: 104px;
+            min-height: 104px;
             max-width: 1322px;
+
+            @media screen and (max-width: $w) {
+                background: #f7f7f7;
+                width: 100%;
+                padding: 36px 25px 0px 0px;
+                grid-template-columns: 6fr 6fr;
+                grid-template-areas:
+                    "brand buttons"
+                    "list list";
+            }
 
             .header__navbarBrand {
                 grid-column: 1;
@@ -30,20 +47,43 @@ body {
                 color: $fontColor1;
                 font-size: 24px;
                 font-weight: 700;
+                margin-left: 35px;
+
+                @media screen and (max-width: $w) {
+                    grid-area: brand;
+                }
             }
 
             .header__navbarList {
                 grid-column: 2;
                 justify-self: flex-end;
 
+                @media screen and (max-width: $w) {
+                    grid-area: list;
+                    justify-self: center;
+                    padding: 84px 0px 98px 0px;
+                }
+
                 .header__navbarUl {
                     display: flex;
                     gap: 25px;
+
+                    @media screen and (max-width: $w) {
+                        flex-direction: column;
+                    }
 
                     a {
                         font-size: 14px;
                         font-weight: 600;
                         color: $fontColor2;
+
+                        @media screen and (max-width: $w) {
+                            font-weight: 400;
+                            font-size: 30px;
+                            line-height: 45px;
+                            text-align: center;
+                            letter-spacing: 0.2px;
+                        }
                     }
                 }
             }
@@ -53,12 +93,13 @@ body {
                 justify-self: flex-end;
                 margin-left: 42px;
 
-                .header__navbarCart {
-                    margin-left: 22px;
+                @media screen and (max-width: $w) {
+                    grid-area: buttons;
                 }
 
-                .header__navbarToggler {
-                    margin-left: 141px;
+                .header__navbarButton {
+                    margin-left: 26px;
+                    background: transparent;
                 }
             }
 
@@ -66,12 +107,17 @@ body {
 
         .header__container {
             display: flex;
-            height: 100%;
+            flex-wrap: wrap;
             max-width: 1332px;
-            justify-content: space-between;
+            justify-content: center;
+
+            @media screen and (max-width: $w) {
+                padding-top: 84px;
+            }
 
             .header__content {
                 align-self: center;
+                margin: 0px 0px 100px 20px;
 
                 .header__h1 {
                     font-family: $Martel;
@@ -81,19 +127,38 @@ body {
                     width: 509px;
                     line-height: 65px;
                     letter-spacing: 0.2px;
+
+                    @media screen and (max-width: $w) {
+                        width: 323px;
+                        font-weight: 700;
+                        font-size: 40px;
+                        line-height: 50px;
+                        text-align: center;
+                        letter-spacing: 0.2px;
+                    }
                 }
 
                 .header__h4 {
                     font-family: 'Montserrat', sans-serif;
                     font-size: 20px;
                     font-weight: 500;
-                    width: 374px;
+                    max-width: 374px;
                     margin-top: 35px;
                     color: $fontColor2;
+
+                    @media screen and (max-width: $w) {
+                        text-align: center;
+                    }
                 }
 
                 .header__buttonsContainer {
                     margin-top: 35px;
+
+                    @media screen and (max-width: $w) {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                    }
 
                     .header__button {
                         font-size: 14px;
@@ -104,21 +169,34 @@ body {
                         height: 48px;
                         border-radius: 37px;
                         margin-right: 8px;
+
+                        @media screen and (max-width: $w) {
+                            margin-bottom: 20px;
+                        }
                     }
 
                     .header__button:active {
                         color: #784F33;
                         background-color: transparent;
                         border: 1px solid #784F33;
+                        width: 162px;
                     }
                 }
             }
 
             .header__image {
-                background-image: url('/img/Agent.png');
-                background-position: bottom;
-                background-repeat: no-repeat;
-                width: 565px;
+                max-height: 681px;
+                max-width: 565px;
+
+                @media screen and (max-width: $w) {
+                    margin: 0px 20px 20px 20px;
+                }
+
+                img {
+                    @media screen and (max-width: $w) {
+                        width: 414px;
+                    }
+                }
             }
         }
     }
@@ -126,28 +204,24 @@ body {
     .ourPractice {
         display: flex;
         flex-direction: column;
-        height: 529px;
-        width: 100%;
         align-items: center;
         justify-content: center;
-
-        .title {
-            width: 431px;
-        }
+        padding: 100px 0px 102px 0px;
+        background: #FFFFFF;
 
         .ourPractice__container {
             display: flex;
-            margin-top: 80px;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding-top: 80px;
             gap: 34px;
-            max-height: 147px;
-            height: 100%;
-
 
             .ourPractice__lightBtn {
                 width: 325px;
                 background: #F9F9F9;
                 box-shadow: 0px 13px 19px rgba(0, 0, 0, 0.07);
                 border-radius: 5px;
+                height: 147px;
             }
 
             .ourPractice__darkBtn {
@@ -155,34 +229,48 @@ body {
                 background: #295C7A;
                 box-shadow: 0px 13px 19px rgba(0, 0, 0, 0.07);
                 border-radius: 5px;
+                height: 147px;
             }
         }
     }
 
     .practiceAdvice {
-        height: 699px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        padding: 125px 0px 108px 0px;
+        background: #fafafa;
+
+        @media screen and (max-width: $w) {
+            background: #f3f3f3;
+        }
 
         .title {
-            width: 431px;
+            padding-bottom: 45px;
         }
 
         .practiceAdvice__container {
             display: flex;
-            margin: 45px 0px 108px 0px;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 40px;
+
+            @media screen and (max-width: $w) {
+                flex-direction: column;
+                gap: 30px;
+            }
 
             .practiceAdvice__advice {
                 width: 230px;
                 display: flex;
                 flex-direction: column;
-                justify-content: flex-end;
+                justify-content: space-between;
+                background: #fafafa;
+                padding-top: 30px;
 
                 .practiceAdvice__adviceTitle {
-                    padding-left: 29px;
+                    padding: 30px 57px 0px 29px;
                     font-family: $Martel;
                     color: $fontColor1;
                     font-size: 16px;
@@ -190,42 +278,75 @@ body {
                 }
 
                 .practiceAdvice__adviceText {
-                    padding-left: 29px;
-                    margin-top: 15px;
+                    padding: 15px 29px 30px 29px;
                     color: $fontColor2;
                 }
 
                 .practiceAdvice__img {
                     height: 138px;
-                    margin-top: 30px;
                 }
             }
         }
     }
 
     .whoWeAre {
-        height: 890px;
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding: 100px 0px 143px 0px;
+        height: 890px;
 
-        .title {
-            width: 468px;
-
+        @media screen and (max-width: $w) {
+            height: 1443px;
         }
 
         .whoWeAre__container {
             display: flex;
             padding-top: 100px;
+            justify-content: space-evenly;
+            width: 100%;
+
+            @media screen and (max-width: $w) {
+                flex-direction: column;
+                flex-wrap: wrap;
+                align-items: center;
+            }
 
             .whoWeAre__video {
 
-                .whoWeAre__video_shadow {
+                .whoWeAre__videoBox {
+                    @media screen and (max-width: 1000px) {
+                        position: relative;
+                        height: 442px;
+                        width: 333px;
+                        overflow: hidden;
+                    }
+
+                    video {
+                        @media screen and (max-width: 1000px) {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            width: 333px;
+                            height: 442px;
+                            object-fit: cover;
+                        }
+                    }
+                }
+
+                .whoWeAre__videoBox_shadow {
                     position: relative;
-                    bottom: 444px;
+                    bottom: 442px;
                     width: 597px;
                     height: 442px;
                     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 14.58%, rgba(56, 56, 56, 0.84) 100%);
+
+                    @media screen and (max-width: 1000px) {
+                        width: 333px;
+                        height: 442px;
+                        bottom: 442px;
+                    }
                 }
 
                 .whoWeAre__videoBtn {
@@ -237,12 +358,21 @@ body {
                     border-radius: 73.6px;
                     left: 250px;
                     bottom: 710px;
+
+                    @media screen and (max-width: 1000px) {
+                        left: 120px;
+                    }
                 }
             }
 
             .whoWeAre__content {
                 width: 321px;
-                margin-left: 121px;
+
+                @media screen and (max-width: $w) {
+                    margin: 0px;
+                    position: relative;
+                    bottom: 480px;
+                }
 
                 .title {
                     width: 321px;
@@ -280,31 +410,58 @@ body {
     .clients {
         display: flex;
         flex-direction: column;
-        height: 339px;
         background: $fontColor1;
+        padding-bottom: 77px;
+        height: 339px;
+
+        @media screen and (max-width: $w) {
+            padding: 0;
+            height: 100%;
+        }
+
 
         .clients__bgWhite {
-            background: white;
+            background: #fafafa;
             width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
+            padding-top: 50px;
 
             .clients__logos {
                 display: flex;
-                width: 986px;
-                justify-content: space-between;
+                flex-wrap: wrap;
+                max-width: 986px;
+                width: 100%;
+                gap: 80px;
+                align-items: center;
+                justify-content: center;
+
+                @media screen and (max-width: $w) {
+                    flex-direction: column;
+                    gap: 60px;
+                }
             }
 
             .clients__subscribe {
                 background: linear-gradient(270deg, #295C7A -1.04%, #0072B5 100%);
                 border-radius: 2px;
-                width: 986px;
-                height: 124px;
+                max-width: 986px;
+                width: 100%;
                 position: relative;
                 top: 62px;
                 display: flex;
-                justify-content: space-between;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                padding: 30px 0px 30px 0px;
+
+                @media screen and (max-width: $w) {
+                    flex-direction: column;
+                    justify-content: center;
+                    text-align: center;
+                    gap: 30px;
+                }
+
 
                 .clients__subscribeText {
                     font-family: $Martel;
@@ -312,16 +469,16 @@ body {
                     line-height: 32px;
                     letter-spacing: 0.1px;
                     color: white;
-                    margin-left: 50px;
                     align-self: center;
                 }
 
                 .clients__subscribeInput {
-                    margin-right: 53px;
                     align-self: center;
+                    display: flex;
 
                     .clients__input {
-                        width: 450px;
+                        width: 333px;
+                        width: 100%;
                         height: 58px;
                         background: #F9F9F9;
                         border: 1px solid #E6E6E6;
@@ -337,7 +494,6 @@ body {
                     }
 
                     .clients__subscribeBtn {
-                        box-sizing: border-box;
                         width: 117px;
                         height: 58px;
                         background: #D0A144;
@@ -358,16 +514,25 @@ body {
         flex-direction: column;
         background: #f3f3f3;
         align-items: center;
+        margin-top: 75px;
+        padding-bottom: 155px;
 
-        .title {
-            margin-top: 80px;
+        @media screen and (max-width: $w) {
+            padding: 75px 0px 137px 0px;
         }
 
         .contacts__container {
             display: flex;
-            height: 393px;
-            margin: 80px 0px 155px 0px;
+            flex-wrap: wrap;
+            margin-top: 80px;
+            justify-content: center;
             align-items: center;
+            gap: 30px;
+
+            @media screen and (max-width: $w) {
+                flex-direction: column;
+                gap: 30px;
+            }
 
             .contacts__card {
                 display: flex;
@@ -427,50 +592,68 @@ body {
 
     .footer {
         .footer__top {
-            height: 142px;
             display: flex;
-            padding-left: 195px;
+            align-items: center;
+            justify-content: space-between;
+            padding: 40px 341px 40px 195px;
+            background: #fafafa;
 
-            .footer__topContainer {
-                display: flex;
-                width: 100%;
-                align-items: center;
-                justify-content: space-between;
-                padding-right: 341px;
+            @media screen and (max-width: 1200px) {
+                padding: 30px 90px 30px 90px;
+            }
 
-                .footer__topText {
+            @media screen and (max-width: $w) {
+                flex-direction: column;
+                padding: 30px 90px 30px 90px;
+            }
 
-                    h3 {
-                        font-family: $Martel;
-                        color: $fontColor1;
-                        font-size: 24px;
-                        line-height: 32px;
-                        letter-spacing: 0.1px;
-                    }
+            .footer__topText {
+
+                h3 {
+                    font-family: $Martel;
+                    color: $fontColor1;
+                    font-size: 24px;
+                    line-height: 32px;
+                    letter-spacing: 0.1px;
                 }
+            }
 
-                button {
-                    height: 58px;
-                    width: 158px;
-                    background: #784F33;
-                    color: white;
-                    border-radius: 5px;
+            button {
+                height: 58px;
+                width: 158px;
+                background: #784F33;
+                color: white;
+                border-radius: 5px;
+
+                @media screen and (max-width: $w) {
+                    margin-top: 50px;
+                    width: 100%;
                 }
             }
         }
 
         .footer__middle {
             display: flex;
-            height: 242px;
             background: linear-gradient(270deg, #295C7A -1.04%, #0072B5 100%);
             color: white;
-            padding: 50px 0px 0px 195px;
+            padding: 50px 42px 50px 195px;
+
+            @media screen and (max-width: 1200px) {
+                padding: 50px 90px 30px 90px;
+            }
+
+            @media screen and (max-width: $w) {
+                flex-direction: column;
+                padding: 55px 0px 45px 88px;
+                align-items: center;
+            }
 
             .footer__middleCol {
                 display: flex;
                 flex-direction: column;
                 margin-right: 42px;
                 width: 148px;
+
 
                 h5 {
                     font-family: $Martel;
@@ -491,7 +674,8 @@ body {
             }
 
             .footer__middleLastCol {
-                margin-left: 42px;
+                width: 240px;
+
 
                 h5 {
                     font-family: $Martel;
@@ -503,16 +687,22 @@ body {
 
                 .footer__middleContact {
                     display: flex;
+                    overflow: hidden;
 
                     img {
-                        margin: 0px 10px 20px 0px;
+                        margin: 0px 10px 12px 0px;
                     }
 
                     h6 {
                         font-size: 14px;
                         line-height: 24px;
                         letter-spacing: 0.2px;
+                        white-space: nowrap;
                     }
+                }
+
+                @media screen and (max-width: $w) {
+                    padding: 30px 0px 0px 18px;
                 }
             }
         }
@@ -520,18 +710,38 @@ body {
         .footer__bottom {
             display: flex;
             align-items: center;
-            height: 74px;
-            padding: 0px 224px 0px 195px;
+            padding: 25px 224px 25px 195px;
             justify-content: space-between;
+            background: #fafafa;
 
-            h6 {
-                color: $fontColor2;
-                font-size: 14px;
-                line-height: 24px;
-                letter-spacing: 0.2px;
+            @media screen and (max-width: 1200px) {
+                padding: 25px 90px 25px 90px;
+            }
+
+            @media screen and (max-width: $w) {
+                padding: 25px 0px 100px 0px;
+                flex-direction: column;
+            }
+
+            .footer__bottomH6 {
+                @media screen and (max-width: $w) {
+                    width: 219px;
+                    margin-bottom: 53px;
+                }
+
+                h6 {
+                    color: $fontColor2;
+                    font-size: 14px;
+                    line-height: 24px;
+                    letter-spacing: 0.2px;
+                }
             }
 
             .footer__bottomSMM {
+                @media screen and (max-width: $w) {
+                    width: 260px;
+                }
+
                 a {
                     margin-left: 20px;
                 }
@@ -542,6 +752,14 @@ body {
 
 .title {
     text-align: center;
+    width: 431px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media screen and (max-width: $w) {
+        width: 258px;
+    }
 }
 
 .title__h2 {
@@ -551,6 +769,7 @@ body {
     font-weight: 700;
     line-height: 50px;
     letter-spacing: 0.2px;
+
 }
 
 .title__p {
@@ -558,4 +777,8 @@ body {
     margin-top: 10px;
     line-height: 20px;
     letter-spacing: 0.2px;
+
+    @media screen and (max-width: $w) {
+        width: 206px;
+    }
 }

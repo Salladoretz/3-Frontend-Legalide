@@ -13,7 +13,7 @@ body {
     width: 100%;
 
     .header {
-        background-image: url('/img/Cover.png');
+        background-image: url('../img/Cover.png');
         background-size: cover;
         display: flex;
         flex-direction: column;
@@ -21,7 +21,7 @@ body {
 
 
         @media screen and (max-width: $w) {
-            background-image: url('/img/Cover_mobile.png');
+            background-image: url('../img/Cover_mobile.png');
         }
 
         .header__navbar {

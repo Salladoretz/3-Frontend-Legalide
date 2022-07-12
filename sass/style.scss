@@ -95,6 +95,7 @@ body {
 
                 @media screen and (max-width: $w) {
                     grid-area: buttons;
+                    margin-left: 20px;
                 }
 
                 .header__navbarButton {
@@ -148,6 +149,7 @@ body {
 
                     @media screen and (max-width: $w) {
                         text-align: center;
+                        font-size: 16px;
                     }
                 }
 
@@ -192,9 +194,17 @@ body {
                     margin: 0px 20px 20px 20px;
                 }
 
+                @media screen and (max-width: 460px) {
+                    margin: 0px 10px 10px 10px;
+                }
+
                 img {
                     @media screen and (max-width: $w) {
                         width: 414px;
+                    }
+
+                    @media screen and (max-width: 460px) {
+                        width: 340px;
                     }
                 }
             }
